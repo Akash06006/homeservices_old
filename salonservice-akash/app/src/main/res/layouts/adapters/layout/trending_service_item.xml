@@ -39,10 +39,10 @@
             <ImageView
                 android:id="@+id/img_service"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_150"
+                android:layout_height="160dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/dp_5"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/ic_category"
                 android:visibility="visible" />
             <!--android:scaleType="centerCrop"-->

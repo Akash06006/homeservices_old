@@ -52,7 +52,7 @@ class LandingHomeCategoriesGridListAdapter(
             holder = convertView.tag as ItemHolder
         }
 
-        holder.topLayout!!.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#" + categoriesList[position].colorCode.trim()))/*mContext.getResources().getColorStateList(R.color.colorOrange)*/)
+       // holder.topLayout!!.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#" + categoriesList[position].colorCode.trim()))/*mContext.getResources().getColorStateList(R.color.colorOrange)*/)
         holder.name!!.text = categoriesList[position].name
 
         Glide.with(mContext)

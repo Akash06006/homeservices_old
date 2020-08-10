@@ -19,13 +19,13 @@
         android:layout_height="match_parent">-->
 
     <LinearLayout
-        android:background="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorWhite"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/et_coupon_code"
+            android:id="@+id/txtLoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
@@ -49,7 +49,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/offersViewpager"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_150"
+            android:layout_height="170dp"
             android:layout_margin="@dimen/dp_5"
             android:elevation="@dimen/dp_20"
             tools:ignore="UnusedAttribute" />

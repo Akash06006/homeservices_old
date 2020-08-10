@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.example.services.R
 import com.example.services.databinding.CategoryItemBinding
 import com.example.services.views.home.LandingHomeFragment
@@ -14,9 +16,9 @@ import kotlinx.android.synthetic.main.trending_service_item.view.*
 import kotlin.collections.ArrayList
 
 class LandingHomeOffersListAdapter(
-        context: LandingHomeFragment,
-        addressList: ArrayList<com.example.services.viewmodels.home.Banners>,
-        var activity: Context
+    context: LandingHomeFragment,
+    addressList: ArrayList<com.example.services.viewmodels.home.Banners>,
+    var activity: Context
 ) : PagerAdapter() {
     private var inflater: LayoutInflater? = null
     // private val images = arrayOf(R.drawable.anton, R.drawable.frankjpg, R.drawable.redcharlie, R.drawable.westboundary)
@@ -44,10 +46,10 @@ class LandingHomeOffersListAdapter(
         view.tv_service_name!!.text = offersList[position].name
         view.tv_service_name!!.visibility = View.GONE
         Glide.with(mContext)
-                .load(offersList[position].url)
-                // .apply(RequestOptions.bitmapTransform(RoundedCorners(20)))
-                .placeholder(R.drawable.ic_category)
-                .into(view.img_service!!)
+            .load(offersList[position].url)
+            .apply(RequestOptions.bitmapTransform(RoundedCorners(20)))
+            .placeholder(R.drawable.ic_category)
+            .into(view.img_service!!)
         val vp = container as ViewPager
         vp.addView(view, 0)
         return view
