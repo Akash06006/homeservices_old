@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="registerViewModel"
+                type="com.example.services.viewmodels.RegisterViewModel"/>
+
+    </data>
+
+    <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:focusable="true"
+                  android:orientation="vertical"
+                  android:focusableInTouchMode="true">
+
+        <include
+
+                android:id="@+id/common_tool_bar"
+                layout="@layout/common_toolbar_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <ScrollView
+                android:id="@+id/parent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:id="@+id/upload_profile_layer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/shape_round_corner"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> registerViewModel.clickListener(v)}"
+                        android:padding="@dimen/dp_10"
+                >
+
+                    <ImageView
+                            android:id="@+id/upload_icon"
+                            android:layout_width="@dimen/dp_100"
+                            android:layout_height="@dimen/dp_100"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@string/todo"
+                            android:padding="12dp"
+                            android:src="@drawable/ic_upload_icon"/>
+
+                    <TextView
+                            android:id="@+id/iv_profile_picture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="@string/upload_profile_picture"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorBlack2"
+                            android:textSize="@dimen/sp_13"
+                            app:font="@{`regular`}"/>
+
+                </LinearLayout>
+
+                <EditText
+                        android:id="@+id/et_firstname"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@drawable/ic_edit_back"
+                        android:hint="@string/first_name"
+                        android:maxLength="30"
+                        android:inputType="text"
+                        android:padding="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:textColor="@color/colorblack"
+                        android:textColorHint="@color/colorGrey"
+                        android:textSize="@dimen/sp_14"
+                        app:font="@{`regular`}"
+                        tools:ignore="MissingConstraints"/>
+
+                <EditText
+                        android:id="@+id/et_lastname"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@drawable/ic_edit_back"
+                        android:hint="@string/last_name"
+                        android:maxLength="30"
+                        android:padding="@dimen/dp_10"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/colorblack"
+                        android:textColorHint="@color/colorGrey"
+                        android:textSize="@dimen/sp_14"
+                        app:font="@{`regular`}"
+                        tools:ignore="MissingConstraints"/>
+
+                <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@drawable/ic_edit_back"
+                        android:padding="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:maxLength="100"
+                        android:hint="@string/email1"
+                        android:textColor="@color/colorblack"
+                        android:textColorHint="@color/colorGrey"
+                        android:textSize="@dimen/sp_14"
+                        app:font="@{`regular`}"
+                        tools:ignore="MissingConstraints"/>
+
+                <EditText
+                        android:id="@+id/et_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@drawable/ic_edit_back"
+                        android:hint="@string/address"
+                        android:maxLength="80"
+                        android:maxLines="5"
+                        android:padding="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:textColor="@color/colorblack"
+                        android:textColorHint="@color/colorGrey"
+                        android:textSize="@dimen/sp_14"
+                        app:font="@{`regular`}"
+                        tools:ignore="MissingConstraints"/>
+
+                <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@drawable/ic_edit_back"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:padding="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:textColor="@color/colorblack"
+                        android:textColorHint="@color/colorGrey"
+                        android:textSize="@dimen/sp_14"
+                        app:font="@{`regular`}"
+                        android:hint="@string/password"
+                        tools:ignore="MissingConstraints"/>
+
+                <TextView
+                        android:id="@+id/tv_regex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="@string/regex_message"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:textColor="@color/colorBlack2"
+                        android:textSize="@dimen/sp_10"
+                        app:font="@{`regular`}"
+                />
+
+                <EditText
+                        android:id="@+id/et_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@drawable/ic_edit_back"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:padding="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:hint="@string/confirm_password"
+                        android:textColor="@color/colorblack"
+                        android:textColorHint="@color/colorGrey"
+                        android:textSize="@dimen/sp_14"
+                        app:font="@{`regular`}"
+                        tools:ignore="MissingConstraints"/>
+
+                <ImageView
+                        android:id="@+id/btn_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@drawable/round_layout"
+                        android:padding="@dimen/dp_10"
+                        android:src="@drawable/ic_arrow_forward"
+                        android:onClick="@{(v) -> registerViewModel.clickListener(v)}"
+                        android:contentDescription="@string/todo"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

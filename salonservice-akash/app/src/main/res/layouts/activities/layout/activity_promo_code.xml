@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.services.common.BindingUtils" />
+
+        <variable
+            name="promcodeViewModel"
+            type="com.example.services.viewmodels.promocode.PromoCodeViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        app:hideKeyBoardOnClick="@{`back`}"
+        android:orientation="vertical">
+
+        <include
+
+            android:id="@+id/common_tool_bar"
+            layout="@layout/common_toolbar_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> promcodeViewModel.clickListener(v)}" />
+
+
+        <RelativeLayout
+            android:elevation="@dimen/dp_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:layout_marginBottom="@dimen/dp_5">
+
+            <EditText
+                android:id="@+id/et_coupon_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/btnApplyPromo"
+                android:layout_alignBottom="@+id/btnApplyPromo"
+                android:layout_toLeftOf="@+id/btnApplyPromo"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_promo_code"
+                android:imeOptions="actionDone"
+                android:paddingStart="@dimen/dp_20"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:singleLine="true"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/hint_size"
+                app:font="@{`regular`}"
+                tools:ignore="Autofill,RtlSymmetry" />
+
+            <Button
+                android:id="@+id/btnApplyPromo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@color/colorPrimary"
+                android:onClick="@{(v) -> promcodeViewModel.clickListener(v)}"
+                android:padding="@dimen/dp_5"
+                android:text="@string/apply"
+                android:textColor="@color/colorWhite" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_2"
+            android:paddingBottom="@dimen/dp_5">
+
+          <!--  <TextView
+                android:id="@+id/tv_no_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/no_record_found"
+                android:visibility="gone" />-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/tv_no_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:visibility="gone"
+                app:lottie_rawRes="@raw/emp_data"  />
+            <TextView
+                android:id="@+id/title"
+                android:layout_below="@+id/tv_no_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/no_record_found"
+                android:visibility="gone" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_promo"
+                android:padding="@dimen/dp_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

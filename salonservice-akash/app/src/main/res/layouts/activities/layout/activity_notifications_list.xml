@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.services.common.BindingUtils" />
+
+        <variable
+                name="notificationViewModel"
+                type="com.example.services.viewmodels.notifications.NotificationsViewModel" />
+
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/dp_10">
+
+        <include
+
+                android:id="@+id/common_tool_bar"
+                layout="@layout/common_toolbar_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v) -> notificationViewModel.clickListener(v)}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_notification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/btn_clear"
+                android:layout_below="@+id/common_tool_bar"
+                android:layout_margin="@dimen/dp_10" />
+
+       <!-- <TextView
+                android:id="@+id/tv_no_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/no_record_found"
+                app:font="@{`regular`}" />-->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/tv_no_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:lottie_autoPlay="true"
+            android:visibility="gone"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/emp_data"  />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_below="@+id/tv_no_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/no_record_found"
+            android:visibility="gone" />
+        <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@drawable/btn_bg_shape_colored"
+                android:elevation="@dimen/dp_10"
+                android:onClick="@{(v) -> notificationViewModel.clickListener(v)}"
+                android:text="@string/clear_all"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+
+</layout>

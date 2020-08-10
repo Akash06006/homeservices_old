@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- <color name="colorPrimary">#FFAF10</color>-->
+    <color name="colorPrimary">#F75469</color>
+    <color name="colorPrimaryDark">#F75469</color>
+    <color name="colorAccent">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhite2">#F9F4F3</color>
+    <color name="colorGrey">#9098B1</color>
+    <color name="appBackgroundColor">#ffffff</color>
+    <color name="colorGreyLGlobalight">#EDF0F0</color>
+    <!--<color name="colorButton">#FF6871</color>-->
+    <color name="colorblack">#474747</color>
+    <color name="colorOrange">#FC9539</color>
+    <color name="colorSuccess">#00BB27</color>
+    <color name="colorRed">#E72F1A</color>
+
+    <color name="colorStatus">#F39600</color>
+
+    <color name="colorButton">#474747</color>
+    <color name="colorBlack2">#464646</color>
+    <color name="transparentColorBlack">#80464646</color>
+    <color name="colorGolden">#F1B922</color>
+    <color name="colorGrey1">#D0D0D0</color>
+    <color name="colorGreyLight">#EDF0F0</color>
+    <color name="colorLightBlue">#3374DA</color>
+    <color name="orange_transparent">#00FC9A03</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorYellow">#dab45f</color>
+    <color name="colorTransparentBlack">#99000000</color>
+    <color name="list_text_color">#404040</color>
+    <color name="trans">#00000000</color>
+    <color name="tabSelection">#DB6589</color>
+    <color name="btnBackground">#F75469</color>
+    <color name="salonBtnBackground">#F75469</color>
+    <color name="btnBackgroundWhite">#F8F8F8</color>
+    <color name="colorPrice">#1DBB2D</color>
+
+
+</resources>

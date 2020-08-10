@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "637061013375",
+    "firebase_url": "https://salon-servfirbices-app.firebaseio.com",
+    "project_id": "salon-services-app",
+    "storage_bucket": "salon-services-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637061013375:android:37e9efc87c9351374d044a",
+        "android_client_info": {
+          "package_name": "com.example.services"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637061013375-88agteljb7e2r2lvmf5d708hmjo2rmj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_ZlqMqqGCzYAX2FkqxyQb1XDRraKYSvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637061013375-88agteljb7e2r2lvmf5d708hmjo2rmj7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

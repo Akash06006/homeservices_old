@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="my_jobs">My Jobs</string>
+    <string name="job_requests">Job Requests</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="persons">Persons : </string>
+    <string name="tons">Tons</string>
+    <string name="no_record_found">No Record Found</string>
+    <string name="select_time_slot_msg">Please select time slot</string>
+    <string name="enter_promocode_msg">Please enter promocode</string>
+    <string name="use_code">Use Code</string>
+    <string name="off">Off</string>
+    <string name="rate_service_agent">Rate Service Agent</string>
+
+
+    <!-- <string name="api_key">AIzaSyD2-RDPo0jssFqwwTXr6NDpOFzQTcIc3dI</string>-->
+
+</resources>

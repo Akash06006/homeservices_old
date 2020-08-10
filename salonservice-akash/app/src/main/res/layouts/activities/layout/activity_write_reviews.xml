@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.services.common.BindingUtils" />
+
+        <variable
+            name="reviewsViewModel"
+            type="com.example.services.viewmodels.ratingreviews.RatingReviewsViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        app:hideKeyBoardOnClick="@{`back`}">
+
+        <include
+
+            android:id="@+id/common_tool_bar"
+            layout="@layout/common_toolbar_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> reviewsViewModel.clickListener(v)}" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_2"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_5">
+
+                <TextView
+                    android:id="@+id/tv_service_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="@string/write_review_msg"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_5">
+
+                    <RatingBar
+                        android:id="@+id/rb_ratings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/dp_10"
+                        android:numStars="5"
+                        android:onClick="@{(v) -> reviewsViewModel.clickListener(v)}"
+                        android:progressTint="@color/colorGolden"
+                        android:stepSize="0.5" />
+
+                    <TextView
+                        android:id="@+id/tvRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:text="0/5"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/write_your_review"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_150"
+                    android:layout_margin="@dimen/dp_5"
+                    android:background="@drawable/shape_round_corner"
+                    android:gravity="top"
+                    android:hint="@string/write_your_review"
+                    android:imeOptions="actionDone"
+                    android:minHeight="@dimen/dp_150"
+                    android:padding="@dimen/dp_10"
+                    android:textColorHint="@color/colorGrey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="@string/add_photo"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/dp_5">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_reviews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="85dp"
+                            android:padding="@dimen/dp_5" />
+
+                        <ImageView
+                            android:id="@+id/imgProduct"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:onClick="@{(v) -> reviewsViewModel.clickListener(v)}"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_add_photo" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/dp_20"
+                    android:background="@drawable/btn_bg_shape_colored"
+                    android:onClick="@{(v) -> reviewsViewModel.clickListener(v)}"
+                    android:text="@string/submit"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    app:font="@{`bold`}" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

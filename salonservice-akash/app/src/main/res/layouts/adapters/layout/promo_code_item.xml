@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.services.common.BindingUtils" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_3"
+        android:background="@drawable/round_back_transparent"
+        android:elevation="@dimen/dp_20"
+        app:hideKeyBoardOnClick="@{`back`}">
+        <!---->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_5">
+
+                <LinearLayout
+                    android:id="@+id/service_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_promo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_category"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:padding="@dimen/dp_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvDiscount"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/btn_bg_shape_colored"
+                            android:gravity="center"
+                            android:text="20%"
+                            android:textColor="@color/colorWhite" />
+
+
+                        <TextView
+                            android:id="@+id/tvPromo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:layout_toRightOf="@+id/tvDiscount"
+                            android:text="Get 20% off with ICICI Bank Credit and Debit card this April."
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/sp_16"
+                            app:font="@{`bold`}" />
+
+                        <TextView
+                            android:id="@+id/tvPromoDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvPromo"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:layout_toRightOf="@+id/tvDiscount"
+                            android:text="On Order of Rs.499 and above."
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textSize="@dimen/sp_12"
+                            app:font="@{`regular`}" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvPromoCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:background="@drawable/ic_code_bg"
+                            android:gravity="center"
+                            android:padding="@dimen/dp_10"
+                            android:text="ICICITREATS"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:font="@{`bold`}" />
+
+                        <TextView
+                            android:id="@+id/btnApply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/dp_10"
+                            android:background="@drawable/btn_bg_shape_colored_primary"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingRight="@dimen/dp_20"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:scaleType="fitXY"
+                            android:text="@string/apply"
+                            android:textColor="@color/colorWhite" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>
