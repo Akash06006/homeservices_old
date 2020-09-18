@@ -14,12 +14,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_5"
         android:layout_marginLeft="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_5"
         android:layout_marginRight="@dimen/dp_3"
         android:layout_marginBottom="@dimen/dp_5"
         android:background="@drawable/round_back_transparent"
-        android:elevation="@dimen/dp_20" >
+        android:elevation="@dimen/dp_20">
         <!---->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
@@ -37,7 +37,7 @@
                 <ImageView
                     android:id="@+id/tvVendorImage"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_150"
+                    android:layout_height="160dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_category"
                     android:visibility="visible" />
@@ -46,8 +46,7 @@
                     android:id="@+id/tvVendorName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/title_shape_square_stroke"
+                    android:layout_below="@+id/tvVendorImage"
                     android:clickable="false"
                     android:paddingLeft="@dimen/dp_20"
                     android:paddingTop="@dimen/dp_10"
@@ -55,9 +54,71 @@
                     android:paddingBottom="@dimen/dp_10"
                     android:text="Facial"
                     android:textAllCaps="false"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/sp_18" />
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/lineView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/tvVendorName"
+                    android:layout_alignLeft="@+id/tvVendorName"
+                    android:layout_alignRight="@+id/tvVendorName"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/ratingLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lineView"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:id="@+id/rBar"
+                        style="@android:style/Widget.Material.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:numStars="1"
+                        android:rating="1"
+                        android:theme="@style/RatingBar"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/txtRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/rBar"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:text="4.1 Ratings - 500+"
+                        android:textAllCaps="false" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ratingLayout"
+                    android:clickable="false"
+                    android:drawableLeft="@drawable/ic_location"
+                    android:drawablePadding="10dp"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:text="Facial"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/sp_12" />
+
                 <!--android:scaleType="centerCrop"-->
+                <!--                    android:background="@drawable/title_shape_square_stroke"-->
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 

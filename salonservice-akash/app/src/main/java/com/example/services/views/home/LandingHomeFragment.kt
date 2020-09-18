@@ -175,8 +175,8 @@ LandingHomeFragment : BaseFragment(), DialogssInterface {
                     // showToastError("Clear Cart message")
                     showClearCartDialog()
                 } else {
-                    GlobalConstants.COLOR_CODE =
-                        "#" + categoriesList[position].colorCode.toString().trim()
+                    /*GlobalConstants.COLOR_CODE =
+                        "#" + categoriesList[position].colorCode.toString().trim()*/
                     val intent = Intent(activity!!, VendorsListActivity::class.java)
                     intent.putExtra("catId", categoriesList[position].id)
                     intent.putExtra("name", categoriesList[position].name)

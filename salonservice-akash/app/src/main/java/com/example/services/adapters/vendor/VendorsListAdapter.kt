@@ -58,6 +58,7 @@ class VendorsListAdapter(
         viewHolder = holder
 
         holder.binding!!.tvVendorName.text = addressList[position].companyName
+        holder.binding!!.tvAddress.text = addressList[position].address1
 
         // holder.binding.imgFavourite.setImageResource(R.drawable.ic_delete)
         //holder.binding!!.rBar.setRating(addressList[position].rating?.toFloat())
@@ -75,11 +76,11 @@ class VendorsListAdapter(
             ) {
                 mContext.clearCartDialog()
             } else {
-               /* SharedPrefClass().putObject(
-                    mContext,
-                    GlobalConstants.COMPANY_ID,
-                    addressList[position].id
-                )*/
+                /* SharedPrefClass().putObject(
+                     mContext,
+                     GlobalConstants.COMPANY_ID,
+                     addressList[position].id
+                 )*/
                 GlobalConstants.COMPANY_ID = addressList[position].id.toString()
                 val intent = Intent(mContext, DashboardActivity::class.java)
                 mContext.startActivity(intent)

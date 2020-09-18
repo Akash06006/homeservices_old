@@ -24,7 +24,6 @@
         android:orientation="vertical">
 
         <include
-
             android:id="@+id/common_tool_bar"
             layout="@layout/common_toolbar_back"
             android:layout_width="match_parent"
@@ -40,7 +39,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
+                android:background="#10000000"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -66,7 +65,7 @@
                             android:layout_centerInParent="true"
                             android:contentDescription="@string/todo"
                             android:src="@{profileModel.image!=null ?  profileModel.image.toString():@string/todo,default=@drawable/ic_person}" />
-                        />
+
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/iv_edit"
@@ -101,12 +100,39 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/dp_20"
-                    android:background="@drawable/ic_profile_back"
                     android:orientation="vertical"
                     android:padding="@dimen/dp_10">
+                    <!--                    android:background="@drawable/ic_profile_back"
+                    -->
+                    <com.google.android.material.textfield.TextInputLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:hint="@string/first_name"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_firstname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:inputType="text"
+                            android:maxLength="30"
+                            android:singleLine="true"
+                            android:text="@{profileModel.firstName}"
+                            android:textColor="@color/colorblack"
+                            android:textStyle="bold"
+                            app:font="@{`regular`}"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!--                            android:background="@drawable/ic_editttext_bg"
+                    -->
                     <EditText
-                        android:id="@+id/et_firstname"
+                        android:id="@+id/et_firstname1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_20"
@@ -122,11 +148,37 @@
                         android:textColor="@color/colorblack"
                         android:textColorHint="@color/colorGrey"
                         android:textSize="@dimen/sp_14"
+                        android:visibility="gone"
                         app:font="@{`regular`}"
                         tools:ignore="MissingConstraints" />
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:hint="@string/last_name"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_lastname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLength="30"
+                            android:singleLine="true"
+                            android:text="@{profileModel.lastName}"
+                            android:textColor="@color/colorblack"
+                            android:textColorHint="@color/colorGrey"
+                            android:textStyle="bold"
+                            app:font="@{`regular`}"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <EditText
-                        android:id="@+id/et_lastname"
+                        android:id="@+id/et_lastname1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/ic_editttext_bg"
@@ -141,14 +193,39 @@
                         android:textColor="@color/colorblack"
                         android:textColorHint="@color/colorGrey"
                         android:textSize="@dimen/sp_14"
+                        android:visibility="gone"
                         app:font="@{`regular`}"
                         tools:ignore="MissingConstraints" />
 
-                    <EditText
-                        android:id="@+id/et_phone"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ic_editttext_bg"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:hint="@string/phone_number"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:maxLength="12"
+                            android:singleLine="true"
+                            android:text="@{profileModel.phoneNumber}"
+                            android:textColor="@color/colorblack"
+                            android:textColorHint="@color/colorGrey"
+                            android:textStyle="bold"
+                            app:font="@{`regular`}"
+                            tools:ignore="MissingConstraints,TextFields" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <EditText
+                        android:id="@+id/et_phone1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:elevation="@dimen/dp_5"
                         android:hint="@string/phone_number"
                         android:inputType="phone"
@@ -159,12 +236,39 @@
                         android:text="@{profileModel.phoneNumber}"
                         android:textColor="@color/colorblack"
                         android:textColorHint="@color/colorGrey"
-                        android:textSize="@dimen/sp_14"
+                        android:visibility="gone"
                         app:font="@{`regular`}"
                         tools:ignore="MissingConstraints,TextFields" />
 
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@null"
+                        android:hint="@string/email1"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLength="100"
+                            android:singleLine="true"
+                            android:text="@{profileModel.email}"
+                            android:textColor="@color/colorblack"
+                            android:textColorHint="@color/colorGrey"
+                            android:textStyle="bold"
+                            app:font="@{`regular`}"
+                            tools:ignore="MissingConstraints" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
                     <EditText
-                        android:id="@+id/et_email"
+                        android:id="@+id/et_email1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/ic_editttext_bg"
@@ -178,6 +282,7 @@
                         android:textColor="@color/colorblack"
                         android:textColorHint="@color/colorGrey"
                         android:textSize="@dimen/sp_14"
+                        android:visibility="gone"
                         app:font="@{`regular`}"
                         tools:ignore="MissingConstraints" />
 
@@ -263,7 +368,7 @@
                     <Button
                         android:id="@+id/btn_submit"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_40"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/dp_20"
                         android:background="@drawable/btn_bg_shape_colored"

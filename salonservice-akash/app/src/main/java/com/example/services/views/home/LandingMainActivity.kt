@@ -33,7 +33,9 @@ import com.example.services.views.favorite.FavoriteListActivity
 import com.example.services.views.notifications.NotificationsListActivity
 import com.example.services.views.orders.OrdersHistoryListActivity
 import com.example.services.views.orders.OrdersListActivity
+import com.example.services.views.orders.OrdersListFragment
 import com.example.services.views.profile.ProfileActivity
+import com.example.services.views.profile.ProfileFragment
 import com.example.services.views.ratingreviews.AddRatingReviewsListActivity
 import com.example.services.views.settings.MyAccountsActivity
 import com.example.services.views.settings.WebViewActivity
@@ -279,8 +281,33 @@ class LandingMainActivity : BaseActivity(),
                 var fragment: Fragment? = null
                 //   activityDashboardBinding!!.toolbarCommon.imgRight.visibility = View.GONE
                 when (tab!!.position) {
-                    /* 0 -> fragment = HomeFragment()
-                     1 -> fragment = JobRequestsFragment()*/
+                    0 -> {
+                        activityLandingBinding!!.toolbarCommon.imgToolbarText.setText(
+                            resources.getString(
+                                R.string.home
+                            )
+                        )
+                        fragment = LandingHomeFragment()
+                    }
+                    1 -> {
+                        activityLandingBinding!!.toolbarCommon.imgToolbarText.setText(
+                            resources.getString(
+                                R.string.my_booking
+                            )
+                        )
+                         fragment = OrdersListFragment()
+                    }
+                    2 -> {
+                        showToastSuccess("Coming Soon")
+                    }
+                    3 -> {
+                        activityLandingBinding!!.toolbarCommon.imgToolbarText.setText(
+                            resources.getString(
+                                R.string.profile
+                            )
+                        )
+                        fragment = ProfileFragment()
+                    }
                 }
                 callFragments(fragment, supportFragmentManager, false, "send_data", "")
 
